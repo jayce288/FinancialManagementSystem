@@ -12,7 +12,7 @@ public class MenuManager {
 			System.out.println("3.Account Managemnet");
 			System.out.println("4.Show a Menu");
 			System.out.println("5.Exit");
-			System.out.println("Select one number between 1-5:");
+			System.out.println("Select one number between 1-4 :");
 			num = Input.nextInt();
 			if (num == 1) {
 				DeposittoAccount();
@@ -33,12 +33,14 @@ public class MenuManager {
 		Scanner Input = new Scanner(System.in);
 		System.out.print("Deposit:");
 		int Deposit = Input.nextInt();
+		System.out.println(Deposit);
 	}
 	
 	public static void WithdrawtoAccount() {
 		Scanner Input = new Scanner(System.in);
 		System.out.print("Withdraw:");
 		int Withdraw = Input.nextInt();
+		System.out.println(Withdraw);
 	}
 	
 	public static void AccountManagemnet() {
