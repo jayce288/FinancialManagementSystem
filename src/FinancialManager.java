@@ -22,7 +22,7 @@ public class FinancialManager {
 	public void AccountManagemnet() {
 		System.out.println("Today Deposit: " + financial.Deposit);
 		System.out.println("Today Withdraw: " + financial.Withdraw);
-		financial.Balance = financial.Deposit - financial.Withdraw;
+		financial.Balance = financial.Balance + financial.Deposit - financial.Withdraw;
 		System.out.println("Current Balance: " + financial.Balance);
 	}
 

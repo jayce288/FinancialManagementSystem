@@ -2,7 +2,7 @@ public class Financial {
 	
 	int Deposit; 
 	int Withdraw;
-	int Balance;
+	int Balance = 2119204;
 	
 	public Financial() {
 	}
@@ -12,9 +12,4 @@ public class Financial {
 		this.Withdraw = Withdraw;
 		this.Balance = Balance;
 	}
-
-	public void printinfo() {
-		System.out.println("Deposit: " + Deposit + "Withdraw: " + Withdraw + "Balance: " + Balance);
-	}
-
 }
