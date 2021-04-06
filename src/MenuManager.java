@@ -5,7 +5,7 @@ public class MenuManager {
 		Scanner input = new Scanner(System.in);
 		FinancialManager financialManager = new FinancialManager(input);
 		
-		int num = 0;
+		int num = 1;
 		while (num != 4) {
 			System.out.println("*** Financial Management System Menu***");
 			System.out.println("1.Deposit to Account");
