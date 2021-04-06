@@ -2,26 +2,26 @@ import java.util.Scanner;
 
 public class MenuManager {
 	public static void main(String[] args) {
-		Scanner Input = new Scanner(System.in);
-		int num = 4;
+		Scanner input = new Scanner(System.in);
+		FinancialManager financialManager = new FinancialManager(input);
 		
-		while (num != 5) {
+		int num = 0;
+		while (num != 4) {
 			System.out.println("*** Financial Management System Menu***");
 			System.out.println("1.Deposit to Account");
 			System.out.println("2.Withdraw to Account");
 			System.out.println("3.Account Managemnet");
-			System.out.println("4.Show a Menu");
-			System.out.println("5.Exit");
+			System.out.println("4.Exit");
 			System.out.println("Select one number between 1-4 :");
-			num = Input.nextInt();
+			num = input.nextInt();
 			if (num == 1) {
-				DeposittoAccount();
+				financialManager.DeposittoAccount();
 			}
 			else if (num == 2) {
-				WithdrawtoAccount();
+				financialManager.WithdrawtoAccount();
 			}
 			else if (num == 3) {
-				AccountManagemnet();
+				financialManager.AccountManagemnet();
 			}
 			else {
 				continue;
@@ -29,25 +29,5 @@ public class MenuManager {
 		}
 	}
 	
-	public static void DeposittoAccount() {
-		Scanner Input = new Scanner(System.in);
-		System.out.print("Deposit:");
-		int Deposit = Input.nextInt();
-		System.out.println(Deposit);
-	}
-	
-	public static void WithdrawtoAccount() {
-		Scanner Input = new Scanner(System.in);
-		System.out.print("Withdraw:");
-		int Withdraw = Input.nextInt();
-		System.out.println(Withdraw);
-	}
-	
-	public static void AccountManagemnet() {
-		Scanner Input = new Scanner(System.in);
-		System.out.println("Today Deposit:");
-		System.out.println("Today Withdraw:");
-		System.out.println("Current Balance:");
-	}
 }
 
