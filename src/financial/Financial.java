@@ -118,7 +118,7 @@ public class Financial {
 			break;
 		default:
 		}
-		System.out.println("kind: " + skind + "account name: " + name + "\n" + "account id: " + id + "\n" +  "account number: " + number + "\n" + "account deposit" + deposit + "\n" + "account withdaw" + withdraw + "\n" + "account balance" + balance);
+		System.out.println("kind: " + skind + "account name: " + name + "\n" + "account id: " + id + "\n" +  "account number: " + number + "\n" + "account deposit " + deposit + "\n" + "account withdaw " + withdraw + "\n" + "account balance" + balance);
 	}
 	
 	public void getUserInput(Scanner input) {
