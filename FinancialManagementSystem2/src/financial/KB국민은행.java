@@ -2,7 +2,7 @@ package financial;
 
 import java.util.Scanner;
 
-public class KB±¹¹ÎÀºÇà extends Financial implements AccountInput {
+public class KB±¹¹ÎÀºÇà extends Financial {
 	
 	protected String cardName;
 	protected int cardId;
@@ -18,20 +18,12 @@ public class KB±¹¹ÎÀºÇà extends Financial implements AccountInput {
 			System.out.print("Do you have an account? (Y/N)");
 			answer = input.next().charAt(0);
 			if(answer == 'y' || answer == 'Y') {
-				System.out.print("Account ID:");
-				int id = input.nextInt();
-				this.setId(id);
-				System.out.print("Account name:");
-				String name = input.next();
-				this.setName(name);
-				System.out.print("Account number:");
-				String number = input.next();
-				this.setNumber(number);
+				setAccountID(input);
+				setAccountName(input);
+				setAccountNumber(input);
 				break;
 			}
 			else if (answer == 'n' || answer == 'N') {
-				this.setName("");
-				this.setNumber("");
 				break;
 			}
 			else {
@@ -42,20 +34,12 @@ public class KB±¹¹ÎÀºÇà extends Financial implements AccountInput {
 			System.out.print("Do you have a credit card? (Y/N)");
 			answer = input.next().charAt(0);
 			if(answer == 'y' || answer == 'Y') {
-				System.out.print("Card ID:");
-				int id = input.nextInt();
-				this.setId(id);
-				System.out.print("Card name:");
-				String name = input.next();
-				this.setName(name);
-				System.out.print("Card number:");
-				String number = input.next();
-				this.setNumber(number);
+				setCardID(input);
+				setCardName(input);
+				setCardNumber(input);
 				break;
 			}
 				else if (answer == 'n' || answer == 'N') {
-					this.setName("");
-					this.setNumber("");
 				break;
 			}
 				else {
@@ -64,23 +48,7 @@ public class KB±¹¹ÎÀºÇà extends Financial implements AccountInput {
 	}
 	
 	public void printinfo() {
-		String skind = "none";
-		switch(this.kind) {
-		case IBK±â¾÷ÀºÇà:
-			skind = "IBK±â¾÷";
-			break;
-		case ¿ì¸®ÀºÇà:
-			skind = "¿ì¸®";
-			break;
-		case KB±¹¹ÎÀºÇà:
-			skind = "KB±¹¹Î";
-			break;
-		case ³óÇùÀºÇà:
-			skind = "³óÇù";
-			break;
-		default:
-		}
+		String skind = getKindString();
 		System.out.println("kind: " + skind + "\n" + "account name: " + name + "\n" + "account id: " + id + "\n" +  "account number: " + number + "\n" + "account deposit " + deposit + "\n" + "account withdaw " + withdraw + "\n" + "account balance " + balance + "\n" + "kind: " + skind + "\n"  + "card name: " + cardName + "\n" + "card id: " + cardId + "\n" +  "card number: " + cardNumber);
 	}
-
 }
