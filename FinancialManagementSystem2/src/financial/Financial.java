@@ -1,9 +1,15 @@
 package financial;
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exceptions.AccountNumberFormatException;
 
-public abstract class Financial implements AccountInput {
+public abstract class Financial implements AccountInput, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1737513610961292322L;
+	
 	protected FinancialKind kind = FinancialKind.IBK기업은행;
 	protected String name;
 	protected int id;

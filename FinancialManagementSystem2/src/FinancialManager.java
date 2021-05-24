@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -9,13 +10,17 @@ import financial.IBK기업은행;
 import financial.KB국민은행;
 import financial.우리은행;
 
-public class FinancialManager {
-	ArrayList<AccountInput> accounts = new ArrayList();
-	Scanner input;
+public class FinancialManager implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8215326090874295101L;
+	
+	ArrayList<AccountInput> accounts = new ArrayList<AccountInput>();
+	transient Scanner input;
 	FinancialManager(Scanner input) {
 		this.input = input;
-	}
-	public void addAccount() {
+	}public void addAccount() {
 		int kind = 0;
 		AccountInput accountInput;
 		while (kind < 1 || kind > 3) {
