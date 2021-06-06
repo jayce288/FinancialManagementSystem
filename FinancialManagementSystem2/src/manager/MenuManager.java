@@ -1,3 +1,4 @@
+package manager;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,6 +9,7 @@ import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import gui.WindowFrame;
 import log.EventLogger;
 
 public class MenuManager {
@@ -19,7 +21,11 @@ public class MenuManager {
 		if (financialManager == null) {
 			financialManager = new FinancialManager(input);
 		}
+		else {
+			financialManager.setScanner(input);
+		}
 		
+		WindowFrame frame = new WindowFrame(financialManager);
 		selectMenu(input, financialManager);
 		putObject(financialManager, "financialManager.ser");
 	}
@@ -84,10 +90,8 @@ public class MenuManager {
 		} catch (FileNotFoundException e) {
 			return financialManager;
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -105,10 +109,8 @@ public class MenuManager {
 			out.close();
 			file.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

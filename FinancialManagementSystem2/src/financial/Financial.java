@@ -198,6 +198,4 @@ public abstract class Financial implements AccountInput, Serializable {
 		}
 		return skind;
 	}
-	
-	
 }

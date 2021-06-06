@@ -1,3 +1,4 @@
+package manager;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -5,6 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import financial.AccountInput;
+import financial.Financial;
 import financial.FinancialKind;
 import financial.IBK기업은행;
 import financial.KB국민은행;
@@ -20,7 +22,13 @@ public class FinancialManager implements Serializable {
 	transient Scanner input;
 	FinancialManager(Scanner input) {
 		this.input = input;
-	}public void addAccount() {
+	}
+	
+	public void setScanner(Scanner input) {
+		this.input = input;
+	}
+	
+	public void addAccount() {
 		int kind = 0;
 		AccountInput accountInput;
 		while (kind < 1 || kind > 3) {
@@ -128,14 +136,19 @@ public class FinancialManager implements Serializable {
 	}
 	
 	public void viewAccounts() { 
-//		System.out.print("Account ID:");
-//		int accountId = input.nextInt();
 		System.out.println("# of registered accounts: " + accounts.size());
 		for (int i = 0; i < accounts.size(); i++) {
 			accounts.get(i).balancecalculate();
 			accounts.get(i).printinfo();
 		}
-		
+	}
+	
+	public int size() {
+		return accounts.size();
+	}
+	
+	public AccountInput get(int index) {
+		return (Financial) accounts.get(index);
 	}
 	
 	public void showEditMenu() {
@@ -148,5 +161,4 @@ public class FinancialManager implements Serializable {
 		System.out.println("6.Exit");
 		System.out.println("Select one number between 1-6 :");
 	}
-
 }

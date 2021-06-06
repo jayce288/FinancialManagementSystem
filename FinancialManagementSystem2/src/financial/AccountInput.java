@@ -10,7 +10,11 @@ public interface AccountInput {
 	
 	public void setId(int id);
 	
+	public String getName();
+	
 	public void setName(String name);
+	
+	public String getNumber();
 	
 	public void setNumber(String number) throws AccountNumberFormatException;
 	
