@@ -15,7 +15,7 @@ public class WindowFrame extends JFrame {
 	public WindowFrame(FinancialManager financialManager) {
 		this.financialManager = financialManager;
 		this.menuselection = new MenuSelection(this);
-		this.accountadder = new AccountAdder(this);
+		this.accountadder = new AccountAdder(this, this.financialManager);
 		this.accountviewer = new AccountViewer(this, this.financialManager);
 		
 		this.setSize(500, 300);

@@ -94,9 +94,7 @@ public class MenuManager {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
 		return financialManager;
-		
 	}
 	
 	public static void putObject(FinancialManager financialManager, String filename) {

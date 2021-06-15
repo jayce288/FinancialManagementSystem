@@ -28,6 +28,16 @@ public class FinancialManager implements Serializable {
 		this.input = input;
 	}
 	
+	public void addAccount(String id, String name, String number) {
+		AccountInput accountInput = new IBK기업은행(FinancialKind.IBK기업은행);
+		accountInput.getUserInput(input);
+		accounts.add(accountInput);
+	}
+	
+	public void addAccount(AccountInput accountInput) {
+		accounts.add(accountInput);
+	}
+	
 	public void addAccount() {
 		int kind = 0;
 		AccountInput accountInput;
@@ -41,7 +51,7 @@ public class FinancialManager implements Serializable {
 				if (kind == 1) {
 					accountInput = new IBK기업은행(FinancialKind.IBK기업은행);
 					accountInput.getUserInput(input);
-					accounts.add(accountInput);	
+					accounts.add(accountInput);
 					break;
 				}
 				else if (kind == 2) {
